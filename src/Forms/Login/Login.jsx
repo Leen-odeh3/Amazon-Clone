@@ -1,13 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Firebase/config";
 
 const Login = ({ show }) => {
   useEffect(() => {
     show(false);
   }, []);
-
-  const navigate = useNavigate();
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const [email, setEmail] = useState("");
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const [password, setPassword] = useState("");
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const navigate = useNavigate();
+ 
 
   return (
     <div className="login">
@@ -18,10 +25,24 @@ const Login = ({ show }) => {
         <h1>Sign in</h1>
         <form>
           <h5>Email</h5>
-          <input type="email" />
+          <input type="email"  onChange={(e) => setEmail(e.target.value)}/>
           <h5>Password</h5>
-          <input type="password" />
-          <button className="login-signInBtn" type="submit">
+          <input type="password"   onChange={(e) => setPassword(e.target.value)}/>
+          <button className="login-signInBtn" type="submit" onClick={(e)=>{
+e.preventDefault();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    navigate("/home");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+          }}>
             Sign in
           </button>
           <p>
