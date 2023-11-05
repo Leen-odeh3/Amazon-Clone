@@ -51,9 +51,10 @@ const signup = ({ show }) => {
                   const errorMessage = error.message;
                   // ..
                 });
+                navigate("/login");
             }}
           >
-            Sign up
+           Sign up
           </button>
           <p>
             By continuing, you agree to Amazon's Fake Clone Conditions of Use

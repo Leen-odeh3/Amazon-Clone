@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useAuthState } from "react-firebase-hooks/auth";
 import "./Header.scss";
+import { getAuth, signOut } from "firebase/auth";
+
+import { auth } from "./../../Firebase/config.js";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <div className="header">
       <Link to="/">
@@ -11,15 +15,48 @@ const Header = () => {
       </Link>
       <div className="header-search">
         <input className="header-searchInput" type="text" />
-        <i className="bi bi-search header-searchIcon" style={{ Color: "black" }}></i>
+        <i
+          className="bi bi-search header-searchIcon"
+          style={{ Color: "black" }}
+        ></i>
       </div>
       <div className="header-nav">
-        <Link to="/login">
-          <div className="header-option">
-            <span className="header-optionLineOne">Hello Guest</span>
-            <span className="header-optionLineTwo">"Sign In"</span>
-          </div>
-        </Link>
+        {user && (
+          <>
+            {" "}
+            <Link to="/home">
+              <div className="header-option">
+                <span className="header-optionLineOne">leen</span>
+                <span
+                  className="header-optionLineTwo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const auth = getAuth();
+                    signOut(auth)
+                      .then(() => {
+                        // Sign-out successful.
+                      })
+                      .catch((error) => {
+                        // An error happened.
+                      });
+                  }}
+                >
+                  Logout
+                </span>
+              </div>
+            </Link>{" "}
+          </>
+        )}
+        {!user && (
+          <>
+            <Link to="/login">
+              <div className="header-option">
+                <span className="header-optionLineOne">Hello Guest</span>
+                <span className="header-optionLineTwo">"Sign In"</span>
+              </div>
+            </Link>{" "}
+          </>
+        )}
         <Link to="/orders">
           <div className="header-option">
             <span className="header-optionLineOne">Returns</span>
@@ -30,10 +67,15 @@ const Header = () => {
           <span className="header-optionLineOne">Your</span>
           <span className="header-optionLineTwo">Prime</span>
         </div>
-        <Link to="/checkout" >
-          <div className="header-optionBasket"  >
-            <i className="bi bi-cart4" style={{fontSize:"24px" }} ></i>
-            <span className="header-optionLineTwo header-basketCount" style={{marginLeft:"10px",marginRight:"10px"}}>4</span>
+        <Link to="/checkout">
+          <div className="header-optionBasket">
+            <i className="bi bi-cart4" style={{ fontSize: "24px" }}></i>
+            <span
+              className="header-optionLineTwo header-basketCount"
+              style={{ marginLeft: "10px", marginRight: "10px" }}
+            >
+              4
+            </span>
           </div>
         </Link>
       </div>
