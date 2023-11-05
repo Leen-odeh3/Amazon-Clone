@@ -8,6 +8,8 @@ import { auth } from "./../../Firebase/config.js";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
+  console.log(user);
+
   return (
     <div className="header">
       <Link to="/">
@@ -23,10 +25,10 @@ const Header = () => {
       <div className="header-nav">
         {user && (
           <>
-            {" "}
+         
             <Link to="/home">
               <div className="header-option">
-                <span className="header-optionLineOne">leen</span>
+                <span className="header-optionLineOne">Hello {user.email}</span>
                 <span
                   className="header-optionLineTwo"
                   onClick={(e) => {

@@ -71,6 +71,7 @@ break;
           >
             Sign in
           </button>
+          {haserror && <h4 style={{color:"red",fontSize:"15px",paddingTop:"12px"}}>{message}</h4>}
           <p>
             By continuing, you agree to Amazon's Fake Clone Conditions of Use
             and Privacy Notice.
@@ -82,7 +83,7 @@ break;
             Create your Amazon Account
           </button>
         </form>
-        {haserror && <h6 style={{color:"red",fontSize:"15px"}}>{message}</h6>}
+    
       </div>
     </div>
   );

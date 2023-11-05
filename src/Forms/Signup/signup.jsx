@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.scss";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/config";
 
 const signup = ({ show }) => {
@@ -15,6 +15,8 @@ const signup = ({ show }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [password, setPassword] = useState("");
   // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [name,setname] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const navigate = useNavigate();
   return (
     <div className="login">
@@ -25,7 +27,7 @@ const signup = ({ show }) => {
         <h1>Create account</h1>
         <form>
           <h5> Your Name</h5>
-          <input type="text" />
+          <input type="text" onChange={(e)=>setname(e.target.value)} />
           <h5>Email</h5>
           <input type="email" onChange={(e) => setEmail(e.target.value)} />
           <h5>Password</h5>
@@ -44,6 +46,10 @@ const signup = ({ show }) => {
                 .then((userCredential) => {
                   // Signed up
                   const user = userCredential.user;
+                  updateProfile(auth.currentUser, {
+                    displayName:name,
+                  })
+                  
                   // ...
                 })
                 .catch((error) => {
