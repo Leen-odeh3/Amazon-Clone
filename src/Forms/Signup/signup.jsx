@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-const signup = () => {
-  return (
-    <div>
-      signup
-    </div>
-  )
-}
+const signup = ({ show }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    show(false);
+  }, []);
 
-export default signup
+  return <div>signup</div>;
+};
+
+export default signup;

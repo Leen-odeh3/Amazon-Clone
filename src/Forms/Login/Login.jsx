@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-const Login = () => {
-  return (
-    <div>
-      login
-    </div>
-  )
-}
+const Login = ({ show }) => {
+  useEffect(() => {
+    show(false);
+  }, []);
 
-export default Login
+  return <div>login</div>;
+};
+
+export default Login;
