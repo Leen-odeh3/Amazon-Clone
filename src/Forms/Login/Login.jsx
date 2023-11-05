@@ -17,7 +17,6 @@ const Login = ({ show }) => {
       <div className="login-container">
         <h1>Sign in</h1>
         <form>
-         
           <h5>Email</h5>
           <input type="email" />
           <h5>Password</h5>
