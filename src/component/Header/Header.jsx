@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Header.css";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
       </Link>
       <div className="header-search">
         <input className="header-searchInput" type="text" />
-        <i className="bi bi-search header-searchIcon" style={{ backgroundColor: "black" }}></i>
+        <i className="bi bi-search header-searchIcon" style={{ Color: "black" }}></i>
       </div>
       <div className="header-nav">
         <Link to="/login">
@@ -30,10 +30,10 @@ const Header = () => {
           <span className="header-optionLineOne">Your</span>
           <span className="header-optionLineTwo">Prime</span>
         </div>
-        <Link to="/checkout">
-          <div className="header-optionBasket">
-            <i className="bi bi-cart4" style={{ backgroundColor: "white" }}></i>
-            <span className="header-optionLineTwo header-basketCount">4</span>
+        <Link to="/checkout" >
+          <div className="header-optionBasket"  >
+            <i className="bi bi-cart4" style={{fontSize:"24px" }} ></i>
+            <span className="header-optionLineTwo header-basketCount" style={{marginLeft:"10px",marginRight:"10px"}}>4</span>
           </div>
         </Link>
       </div>
