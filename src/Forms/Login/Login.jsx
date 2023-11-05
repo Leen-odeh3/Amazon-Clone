@@ -35,6 +35,7 @@ signInWithEmailAndPassword(auth, email, password)
     // Signed in 
     const user = userCredential.user;
     navigate("/home");
+    show(true);
     // ...
   })
   .catch((error) => {
