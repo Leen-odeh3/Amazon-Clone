@@ -13,7 +13,7 @@
       margin-left: auto;
     }
     .login-container {
-      width: 390px;
+      width: 420px;
       height: fit-content;
       display: flex;
       flex-direction: column;
@@ -26,6 +26,7 @@
       }
       > form > h5 {
         margin-bottom: 5px;
+        font-size:15px;
       }
       > form > input {
         height: 40px;
