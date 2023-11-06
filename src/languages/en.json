@@ -7,5 +7,42 @@
     "Returns":"Returns",
     "Your":"Your",
     "Hello":"Hello",
-    "Guest":"Guest"
+    "Guest":"Guest",
+    "Razer Kraken Tournament Edition THX 7.1 Surround Sound Gaming Headset: Retractable Noise Cancelling Mic - USB DAC - For PC, PS4, PS5, Nintendo Switch, Xbox One, Xbox Series X & S, Mobile – Black":"Razer Kraken Tournament Edition THX 7.1 Surround Sound Gaming Headset: Retractable Noise Cancelling Mic - USB DAC - For PC, PS4, PS5, Nintendo Switch, Xbox One, Xbox Series X & S, Mobile – Black",
+   
+      "product1": {
+        "title": "Razer Kraken Tournament Edition THX 7.1 Surround Sound Gaming Headset",
+        "price": "$64",
+        "description": "Retractable Noise Cancelling Mic - USB DAC - For PC, PS4, PS5, Nintendo Switch, Xbox One, Xbox Series X & S, Mobile – Black"
+      },
+      "product2": {
+        "title": "Lenovo - 2021 - IdeaPad 3 - Gaming Laptop",
+        "price": "$682.95",
+        "description": "AMD Ryzen 5 5600H - 8GB RAM - 256GB Storage - NVIDIA GeForce GTX 1650-15.6 FHD Display - Windows 11 Home"
+      },
+      "product3": {
+        "title": "Fujitsu ScanSnap iX1600 Wireless Document & Receipt Scanner",
+        "price": "$449",
+        "description": "High-Speed Cloud Enabled Scanner with Large Touchscreen and Auto Document Feeder for Mac or PC, White"
+      },
+      "product4": {
+        "title": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset",
+        "price": "$229",
+        "description": "128 GB Storage"
+      },
+      "product5": {
+        "title": "MeLE PCG02 Fanless Mini PC Stick",
+        "price": "$239",
+        "description": "Windows 11 Pro, J4125 CPU, 8GB/128GB Storage, Portable Mini Desktop Computer Stick, HDMI 4K 60Hz, BT4.2, Dual-Band Wi-Fi, USB, Ethernet..."
+      },
+      "product6": {
+        "title": "SAMSUNG Galaxy S22 Ultra Cell Phone",
+        "price": "$1,142",
+        "description": "Factory Unlocked Android Smartphone, 128GB, 8K Camera & Video, Brightest Display Screen, S Pen, Long Battery Life, Fast 4nm Processor, US Version, Phantom Black"
+      },
+      "product7": {
+        "title": "INIU Wireless Charger, 15W Fast Wireless Charging Station",
+        "price": "$322",
+        "description": "Sleep-Friendly Adaptive Light Compatible with iPhone 15 14 13 12 Pro XR XS 8 Plus Samsung Galaxy S23 S22 S21 S20 Note 20 10 Google etc"
+      }
   }
