@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Header.scss";
@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import { getAuth, signOut } from "firebase/auth";
 
 import { auth } from "./../../Firebase/config.js";
+import CartContext from "../../Context/CartContext.js";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
- 
+ const {cart}=useContext(CartContext);
   const { t, i18n } = useTranslation();
 
   return (
@@ -112,7 +113,7 @@ const Header = () => {
               className="header-optionLineTwo header-basketCount"
               style={{ marginLeft: "10px", marginRight: "10px" }}
             >
-              4
+              {cart.length}
             </span>
           </div>
         </Link>

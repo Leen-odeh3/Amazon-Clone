@@ -5,9 +5,12 @@ import { useTranslation } from "react-i18next";
 
 import starIcon from "../../images/star.png";
 
+
 const Product = ({ title, price, image, rating, id }) => {
+  
   const { t, i18n } = useTranslation();
   const {addToCart}=useContext(CartContext);
+  
   return (
     <div className="product">
       <div className="product-info">
@@ -27,7 +30,7 @@ const Product = ({ title, price, image, rating, id }) => {
           ))}
       </div>
       <img src={image} alt="product-img" width="1000px" />
-      <button onClick={() => addToCart({ id, image, price, title, rating })}> {t("Add to Basket")}</button>
+      <button  onClick={()=>addToCart({title,price,image,rating,id})}> {t("Add to Basket")}</button>
 
     </div>
   );
