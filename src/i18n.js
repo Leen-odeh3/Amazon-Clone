@@ -6,7 +6,7 @@ import english from "./languages/en.json";
 
 const resources = {
   en: {
-    translation:english
+    translation:english,
   },
   ar: {
     translation:arabic,

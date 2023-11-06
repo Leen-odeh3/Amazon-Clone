@@ -36,11 +36,11 @@ const Header = () => {
                 <li
                   dir="rtl"
                   onClick={() => {
-                    i18n.changeLanguage("er");
+                    i18n.changeLanguage("ar");
                   }}
                 >
                   العربية -AR{" "}
-                  {i18n.language === "er" && <i className="bi bi-check"></i>}
+                  {i18n.language === "ar" && <i className="bi bi-check"></i>}
                 </li>
                 <li
                   onClick={() => {
