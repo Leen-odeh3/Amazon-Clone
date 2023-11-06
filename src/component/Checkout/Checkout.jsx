@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Checkout.scss";
 import {basket} from './../../data/cart.js'
-// import Subtotal from "./Subtotal";
+import Subtotal from "../Subtotal/Subtotal.jsx";
 
 const Checkout = () => {
     const [user] = useAuthState(auth);
@@ -36,7 +36,7 @@ const Checkout = () => {
         </div>
       </div>
       <div className="checkout-right">
-        {/* <Subtotal /> */}
+        <Subtotal />
       </div>
     </div>
   );
