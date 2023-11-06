@@ -2,7 +2,7 @@ import React from "react";
 import starIcon from "./../../images/star.png";
 import "./Checkout.scss";
 
-const CheckoutProduct = ({ id, image, title, price, rating, hiddenButton }) => {
+const CheckoutProduct = ({ id, image, title, price, rating }) => {
 
   return (
     <div className="checkoutProduct">
@@ -22,9 +22,9 @@ const CheckoutProduct = ({ id, image, title, price, rating, hiddenButton }) => {
               </p>
             ))}
         </div>
-        {!hiddenButton && (
+       
           <button>Remove from Basket</button>
-        )}
+        
       </div>
     </div>
   );
