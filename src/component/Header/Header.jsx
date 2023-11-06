@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Header.scss";
+import { useTranslation } from "react-i18next";
 import { getAuth, signOut } from "firebase/auth";
 
 import { auth } from "./../../Firebase/config.js";
@@ -9,6 +10,7 @@ import { auth } from "./../../Firebase/config.js";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
   console.log(user);
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="header">
@@ -23,6 +25,22 @@ const Header = () => {
         ></i>
       </div>
       <div className="header-nav">
+      <Link>
+              <div className="header-option">
+                <span className="header-optionLineTwo"><i className="bi bi-translate"></i></span>
+                <span className="header-optionLineOne">Language
+                <ul className="lang-list">
+                  <li dir="rtl">العربية -AR {false && <i className="bi bi-check"></i>}</li>
+                  <li >English -En <i className="bi bi-check"></i></li>
+                  <li>עברית -KO {false && <i className="bi bi-check"></i>}</li>
+                  <li>español -ES {false && <i className="bi bi-check"></i>}</li>
+                </ul>
+                
+                
+                </span>
+                
+              </div>
+            </Link>
         {user && (
           <>
          
@@ -46,7 +64,7 @@ const Header = () => {
                   Logout
                 </span>
               </div>
-            </Link>{" "}
+            </Link>
           </>
         )}
         {!user && (
@@ -56,7 +74,7 @@ const Header = () => {
                 <span className="header-optionLineOne">Hello Guest</span>
                 <span className="header-optionLineTwo">"Sign In"</span>
               </div>
-            </Link>{" "}
+            </Link>
           </>
         )}
         <Link to="/orders">
