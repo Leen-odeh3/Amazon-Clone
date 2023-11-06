@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import starIcon from "./../../images/star.png";
 import "./Checkout.scss";
+import CartContext from '../../Context/CartContext'
 
 const CheckoutProduct = ({ id, image, title, price, rating }) => {
 
+  const {remove}=useContext(CartContext);
   return (
     <div className="checkoutProduct">
       <img className="checkoutProduct-image" src={image}  alt="add-notic"/>
@@ -23,7 +25,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
             ))}
         </div>
        
-          <button>Remove from Basket</button>
+          <button onClick={()=>remove({id})}>Remove from Basket</button>
         
       </div>
     </div>
