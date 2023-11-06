@@ -18,7 +18,7 @@ const Herosection = () => {
   return (
     <div className="home">
       <div className="home-container">
-        <img className="home-image" src="/home.jpg" alt="home-img" width="100%" height="520px" />
+        <img className="home-image" src="/home.jpg" alt="home-img" width="100%" height="650px" />
         <div className="home-row-one">
           <Product className="d-one"
             id={shortid.generate()}
