@@ -3,18 +3,15 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import arabic from "./languages/ar.json";
 import english from "./languages/en.json";
-import french from "./languages/fr.json";
 
 const resources = {
   en: {
-    translation:arabic
+    translation:english
   },
   ar: {
-    translation:english,
-  },
-  fr: {
-    translation: french,
-  },
+    translation:arabic,
+  }
+
 };
 
 i18n

@@ -25,28 +25,44 @@ const Header = () => {
         ></i>
       </div>
       <div className="header-nav">
-      <Link>
-              <div className="header-option">
-                <span className="header-optionLineTwo"><i className="bi bi-translate"></i></span>
-                <span className="header-optionLineOne">Language
-                <ul className="lang-list">
-                  <li dir="rtl">العربية -AR {false && <i className="bi bi-check"></i>}</li>
-                  <li >English -En <i className="bi bi-check"></i></li>
-                  <li>עברית -KO {false && <i className="bi bi-check"></i>}</li>
-                  <li>español -ES {false && <i className="bi bi-check"></i>}</li>
-                </ul>
-                
-                
-                </span>
-                
-              </div>
-            </Link>
+        <Link>
+          <div className="header-option">
+            <span className="header-optionLineTwo">
+              <i className="bi bi-translate"></i>
+            </span>
+            <span className="header-optionLineOne">
+              {t("Language")}
+              <ul className="lang-list">
+                <li
+                  dir="rtl"
+                  onClick={() => {
+                    i18n.changeLanguage("er");
+                  }}
+                >
+                  العربية -AR{" "}
+                  {i18n.language === "er" && <i className="bi bi-check"></i>}
+                </li>
+                <li
+                  onClick={() => {
+                    i18n.changeLanguage("en");
+                  }}
+                >
+                  English -En{" "}
+                  {i18n.language === "en" && <i className="bi bi-check"></i>}
+                </li>
+                <li>עברית -KO   {i18n.language === "ko" && <i className="bi bi-check"></i>}</li>
+                <li>español -ES   {i18n.language === "es" && <i className="bi bi-check"></i>}</li>
+              </ul>
+            </span>
+          </div>
+        </Link>
         {user && (
           <>
-         
             <Link to="/home">
               <div className="header-option">
-                <span className="header-optionLineOne">Hello {user.email}</span>
+                <span className="header-optionLineOne">
+                  {t("Hello")} {user.email}
+                </span>
                 <span
                   className="header-optionLineTwo"
                   onClick={(e) => {
@@ -61,7 +77,7 @@ const Header = () => {
                       });
                   }}
                 >
-                  Logout
+                  {t("Logout")}
                 </span>
               </div>
             </Link>
@@ -71,21 +87,23 @@ const Header = () => {
           <>
             <Link to="/login">
               <div className="header-option">
-                <span className="header-optionLineOne">Hello Guest</span>
-                <span className="header-optionLineTwo">"Sign In"</span>
+                <span className="header-optionLineOne">
+                  {t("Hello")} {t("Guest")}
+                </span>
+                <span className="header-optionLineTwo">{t("Sign In")}</span>
               </div>
             </Link>
           </>
         )}
         <Link to="/orders">
           <div className="header-option">
-            <span className="header-optionLineOne">Returns</span>
-            <span className="header-optionLineTwo">& Orders</span>
+            <span className="header-optionLineOne">{t("Returns")}</span>
+            <span className="header-optionLineTwo">{t("Orders")}</span>
           </div>
         </Link>
         <div className="header-option">
-          <span className="header-optionLineOne">Your</span>
-          <span className="header-optionLineTwo">Prime</span>
+          <span className="header-optionLineOne">{t("Your")}</span>
+          <span className="header-optionLineTwo">{t("Prime")}</span>
         </div>
         <Link to="/checkout">
           <div className="header-optionBasket">
