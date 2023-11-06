@@ -1,6 +1,7 @@
 import React from "react";
 import './Herosection.scss';
 import Product from "../Product/Product";
+// import CartContext from '../../Context/CartContext'
 
 import shortid from "shortid";
 import ProductImg1 from "./../../images/products/1.png";
@@ -14,6 +15,7 @@ import { useTranslation } from "react-i18next";
 
 const Herosection = () => {
   const { t, i18n } = useTranslation();
+  // const {addToCart}=useContext(CartContext);
 
   return (
     <div className="home">
