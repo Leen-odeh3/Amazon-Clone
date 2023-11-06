@@ -9,7 +9,7 @@ import { auth } from "./../../Firebase/config.js";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+ 
   const { t, i18n } = useTranslation();
 
   return (

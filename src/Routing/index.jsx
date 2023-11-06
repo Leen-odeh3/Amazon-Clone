@@ -4,6 +4,7 @@ import Login from '../Forms/Login/Login'
 import Signup from '../Forms/Signup/signup'
 import Header from '../component/Header/Header'
 import Home from '../Pages/Home'
+import CheckoutPage from '../Pages/CheckoutPage'
 
 
 const index = () => {
@@ -18,6 +19,7 @@ const index = () => {
     <Routes>
         <Route path="/Login" element={<Login show={setshow}/>}/>
         <Route path="/signup" element={<Signup show={setshow}/>}/>
+        <Route path="/checkout" element={<CheckoutPage/>}/>
         <Route path="/" element={<Home/>}/>
     </Routes>
     </BrowserRouter>
