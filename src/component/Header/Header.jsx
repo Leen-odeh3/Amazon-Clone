@@ -10,7 +10,7 @@ import CartContext from "../../Context/CartContext.js";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
- const {cart}=useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const { t, i18n } = useTranslation();
 
   return (
@@ -51,8 +51,14 @@ const Header = () => {
                   English -En{" "}
                   {i18n.language === "en" && <i className="bi bi-check"></i>}
                 </li>
-                <li>עברית -KO   {i18n.language === "ko" && <i className="bi bi-check"></i>}</li>
-                <li>español -ES   {i18n.language === "es" && <i className="bi bi-check"></i>}</li>
+                <li>
+                  עברית -KO{" "}
+                  {i18n.language === "ko" && <i className="bi bi-check"></i>}
+                </li>
+                <li>
+                  español -ES{" "}
+                  {i18n.language === "es" && <i className="bi bi-check"></i>}
+                </li>
               </ul>
             </span>
           </div>
@@ -102,10 +108,10 @@ const Header = () => {
             <span className="header-optionLineTwo">{t("Orders")}</span>
           </div>
         </Link>
-        <div className="header-option">
+        {/* <div className="header-option">
           <span className="header-optionLineOne">{t("Your")}</span>
           <span className="header-optionLineTwo">{t("Prime")}</span>
-        </div>
+        </div> */}
         <Link to="/checkout">
           <div className="header-optionBasket">
             <i className="bi bi-cart4" style={{ fontSize: "24px" }}></i>
