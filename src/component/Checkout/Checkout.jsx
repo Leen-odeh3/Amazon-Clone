@@ -1,13 +1,15 @@
 
-import React from "react";
+import React , { useContext } from "react";
 import { auth } from "./../../Firebase/config.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Checkout.scss";
+import CartContext from '../../Context/CartContext'
 import {basket} from './../../data/cart.js'
 import Subtotal from "../Subtotal/Subtotal.jsx";
 
 const Checkout = () => {
+  const {cart}=useContext(CartContext);
     const [user] = useAuthState(auth);
   return (
     <div className="checkout">
@@ -17,7 +19,7 @@ const Checkout = () => {
           <h3>Hello, {user?.email}</h3>
           <h2 className="checkout-title">Your shopping Basket</h2>
           {basket.length > 0 ? (
-            basket.map((item) => (
+            cart.map((item) => (
               <CheckoutProduct
                 key={item.id}
                 id={item.id}

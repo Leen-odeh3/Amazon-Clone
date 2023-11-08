@@ -6,7 +6,17 @@ const CartProvider = ({ children }) => {
 
  
   const addToCart = (item) => {
-    setCart((prev)=>[...prev,item]);
+
+    const newCartItem = {
+      id: item.id,
+      title: item.title,
+      image: item.image,
+      price: item.price,
+      rating:item.rating
+    };
+  
+    setCart((prev)=>[...prev,newCartItem]);
+    console.log(cart);
   
   };
 
