@@ -14,20 +14,29 @@ const CartProvider = ({ children }) => {
       price: item.price,
       rating:item.rating
     };
+    
+  
   
     setCart((prev)=>[...prev,newCartItem]);
-    console.log(cart);
-  
+ 
   };
 
   const remove = (id) => {
-    setCart(cart.filter((e) => e.id !== id));
+    let removed = false;
+    const updatedCart = cart.filter((e) => {
+      if (e.id === id && !removed) {
+        removed = true;
+        return false;
+      }
+      return true;
+    });
+    setCart(updatedCart);    
   };
+
 
   return (
     <CartContext.Provider value={{ cart, addToCart, remove }}>
       {children}
-    
     </CartContext.Provider>
   );
 };
